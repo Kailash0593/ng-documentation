@@ -1,0 +1,10 @@
+
+.topics{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+    .topic{
+        flex-direction: column;
+        width: 100%;
+    }
+}

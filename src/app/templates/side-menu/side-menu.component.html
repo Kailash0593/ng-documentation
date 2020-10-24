@@ -1,0 +1,32 @@
+<ngb-accordion (panelChange)="beforeChange($event)">
+  <ngb-panel id="preventchange-1">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-between">
+        <a routerLink="/rxjs/subjects">Panel</a>
+        <button ngbPanelToggle class="btn btn-link p-0">
+          <i [ngClass]=" opened ? 'fa fa-chevron-up' : 'fa fa-chevron-down'"></i>
+        </button>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent class="ss" >
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Cras justo odio</li>
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="preventchange-3">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-between">
+        <a routerLink="/rxjs/subjects">Panel</a>
+        <button ngbPanelToggle class="btn btn-link p-0">
+          <i [ngClass]=" opened ? 'fa fa-chevron-up' : 'fa fa-chevron-down'"></i>
+        </button>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent class="ss" >
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Cras justo odio</li>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

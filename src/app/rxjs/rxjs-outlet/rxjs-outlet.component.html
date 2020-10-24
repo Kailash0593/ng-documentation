@@ -1,0 +1,19 @@
+<nav class="navbar navbar-dark bg-dark">
+  <span class="navbar-brand mb-0 h1">RxJs</span>
+  <span class="text-white">
+    <a routerLink="/">
+      <i class="fa fa-home"></i>
+    </a>
+  </span>
+</nav>
+<div class="container-fluid p-3">
+  <div class="row">
+    <div class="col-md-3">
+      <app-side-menu></app-side-menu>
+    </div>
+    <div class="col-md-9">
+      <app-breadcrumb></app-breadcrumb>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

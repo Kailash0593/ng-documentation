@@ -1,0 +1,25 @@
+<div class="input-group mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search..."
+    aria-label="Search..."
+    aria-describedby="basic-addon2"
+    [formControl]="searchInput"
+  />
+  <div class="input-group-append">
+    <span class="input-group-text lime lighten-2" id="basic-text1">
+      <i class="fa fa-search"></i>
+    </span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 topics" *ngFor="let topic of topicList; index as i" >
+    <div class="card text-center bg-light topic">
+      <div class="card-body">
+        <a [routerLink]="topic.route">{{ topic.label }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+

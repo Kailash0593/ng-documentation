@@ -1,19 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import * as _ from 'lodash';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-breadcrumb',
+  templateUrl: './breadcrumb.component.html',
+  styleUrls: ['./breadcrumb.component.scss']
 })
+export class BreadcrumbComponent implements OnInit {
+  urlSegments;
 
-export class AppComponent {
-  urlSegments: Array<{
-    label: string, route: string
-  }> = [];
-  constructor(private router:Router){
+  constructor(private router: Router) {
     this.router.events.pipe(
       filter(x => x instanceof NavigationEnd)
     ).subscribe((value: NavigationEnd) => {
@@ -29,4 +27,9 @@ export class AppComponent {
       }).value();
     })
   }
+
+  ngOnInit(): void {
+    
+  }
+
 }

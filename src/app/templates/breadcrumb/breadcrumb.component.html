@@ -1,0 +1,12 @@
+<nav aria-label="breadcrumb" *ngIf="urlSegments">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" *ngFor="let segment of urlSegments; index as i">
+        <a [routerLink]="segment.route" *ngIf="urlSegments.length !== i + 1; else elseBlock">
+            {{ segment.label }}
+        </a>
+        <ng-template #elseBlock>
+        {{ segment.label }}
+        </ng-template>
+    </li>
+  </ol>
+</nav>
