@@ -7,7 +7,7 @@
             <app-side-menu></app-side-menu>
         </div>
         <div class="col-md-9 ">
-            <nav aria-label="breadcrumb" *ngIf="urlSegments" >
+            <nav aria-label="breadcrumb" *ngIf="urlSegments">
                 <ol class="breadcrumb mt-2">
                     <li class="breadcrumb-item" *ngFor="let segment of urlSegments">
                         <a [routerLink]="segment.route">{{segment.label}}</a>
