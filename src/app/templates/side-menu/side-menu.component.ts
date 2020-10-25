@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {NgbAccordionConfig, NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
+import { RouteJson, routeJson } from './../../route-structure';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-side-menu',
@@ -9,20 +11,17 @@ import {NgbAccordionConfig, NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstra
   providers: [NgbAccordionConfig]
 })
 export class SideMenuComponent implements OnInit {
-
-  constructor(
-    private router: Router,
+  isCollapsed = true;
+  sideMenu: RouteJson [] = routeJson;
+  constructor (
     config: NgbAccordionConfig
   ) {
     config.closeOthers = true;
   }
 
-  ngOnInit(): void {}
-
-  public beforeChange($event: NgbPanelChangeEvent) {
-    if ($event.panelId === 'preventchange-2') {
-      $event.preventDefault();
-    }
+  ngOnInit(): void {
+    console.log(routeJson)
   }
+
 
 }

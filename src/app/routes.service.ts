@@ -46,14 +46,15 @@ export class RoutesService {
     }).value();
   }
 
-  getTopicChildern(routeName: string, length: number){
+  getTopicChildern(routeName: string, length: number, name?: string){
     const config = this.router.config;
     const children = _(config).find({
       path: routeName
     }).children;
       
     return _(children).filter((topic) => {
-      return topic.path!=="" && topic.path.split("/").length===length;
+      const paths = topic.path.split("/");
+      return topic.path!=="" && paths.length===length && (name ? paths.includes(name) : true)
     }).map((topic) => {
       const currentTopic = _(topic.path).split("/").get(length!==0 ? length-1 : 0);
       const label = currentTopic.split("-").map((segment) => _.startCase(segment)).join(" ");

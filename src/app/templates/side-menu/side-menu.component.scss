@@ -1,5 +1,12 @@
 ::ng-deep .accordion {
   .card-body {
+    padding: 15px;
+  }
+}
+ul{
+  padding: 0;
+  list-style-type: none;
+  li{
     padding: 0;
   }
 }

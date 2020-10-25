@@ -14,7 +14,7 @@ export class SubjectsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.topics = this.routesService.getTopicChildern("rxjs", 2);
+    this.topics = this.routesService.getTopicChildern("rxjs", 2, "subjects");
   }
 
 }
